@@ -18,10 +18,12 @@ public class SysUserController {
 
     @RequestMapping("add")
     public String add(){
+        System.out.println(1215);
         SysUser sysUser = new SysUser();
         sysUser.setAge(21);
         sysUser.setName("bbb");
         sysUserJpa.save(sysUser);
+
         return "list";
     }
 
