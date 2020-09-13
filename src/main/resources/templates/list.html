@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <table border="1px">
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>age</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="s:${list}">
+            <td th:text="${s.id}"></td>
+            <td th:text="${s.name}"></td>
+            <td th:text="${s.age}"></td>
+            <td>
+                <a th:href="@{/sysUserController/toUpdate(id=${s.id})}">修改</ath:>
+                <a th:href="@{/sysUserController/toDelete(id=${s.id})}">删除</a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
